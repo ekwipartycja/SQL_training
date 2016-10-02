@@ -1,0 +1,17 @@
+CREATE TABLE books (
+id_book INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE autors (
+id_autor INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(35) NOT NULL,
+surname VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE autors_books (
+id_autor INT(4) NOT NULL,
+id_book INT(4) NOT NULL,
+CONSTRAINT autors_id_autor_fk FOREIGN KEY (id_autor) REFERENCES autors (id_autor),
+CONSTRAINT books_id_book_fk FOREIGN KEY (id_book) REFERENCES books ( id_book)
+);
